@@ -1,4 +1,4 @@
-**The problem**
+**The problem**\n
 Even the greatest cities in the world lack a certain balance when it comes to the geographical distribution of their citizens.
 There are always those neighborhoods where everybody wants to live and the real estate is highly valued. On the other
 hand, there are neighborhoods that are less populated and usually considered as the choice of those who cannot afford
