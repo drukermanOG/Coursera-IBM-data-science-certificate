@@ -1,4 +1,5 @@
-**The problem**\n
+**The problem**
+
 Even the greatest cities in the world lack a certain balance when it comes to the geographical distribution of their citizens.
 There are always those neighborhoods where everybody wants to live and the real estate is highly valued. On the other
 hand, there are neighborhoods that are less populated and usually considered as the choice of those who cannot afford
@@ -21,6 +22,7 @@ what is missing in them - It would have been possible to offer that information 
 Influence the neighborhoods’ value and attract more citizens to it.
 
 **Stakeholders**
+
 Municipalities are the primary stakeholder in this project. Knowing what exactly makes a neighborhood less desirable is the key
 in turning it around. For example, if a coffee shop is missing - a tax benefit can be initiated; if it’s a park that’s missing -
 the city can sponsor the construction. Naturally, making a neighborhood more desirable is of primary importance to the city.
