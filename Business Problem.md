@@ -1,4 +1,4 @@
-The problem
+**The problem**
 Even the greatest cities in the world lack a certain balance when it comes to the geographical distribution of their citizens.
 There are always those neighborhoods where everybody wants to live and the real estate is highly valued. On the other
 hand, there are neighborhoods that are less populated and usually considered as the choice of those who cannot afford
@@ -20,11 +20,12 @@ If we would have been able to list those core services and products and segment 
 what is missing in them - It would have been possible to offer that information to various stakeholders. They, in turn, can 
 Influence the neighborhoods’ value and attract more citizens to it.
 
-Stakeholders
+**Stakeholders**
 Municipalities are the primary stakeholder in this project. Knowing what exactly makes a neighborhood less desirable is the key
 in turning it around. For example, if a coffee shop is missing - a tax benefit can be initiated; if it’s a park that’s missing -
 the city can sponsor the construction. Naturally, making a neighborhood more desirable is of primary importance to the city.
 Another stake holder is the private business. Knowing what’s missing can give a business an edge in earning customer’s loyalty
 ahead of competition. Again, if it’s a potential coffee shop the neighborhood lacks, Starbucks would be happy to know that. Once
 more services and products become available, the wheel will start turning and the chicken & egg cycle will be broken. This happens 
-naturally all the time, all around the world. Data can make it happen faster.
+naturally all the time, all around the world. 
+Data can make it happen faster.
