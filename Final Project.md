@@ -21,8 +21,8 @@ The complementary information that is missing are the different services offered
 
 After downloading the public data of Toronto’s neighborhoods, I am facing with the most fundamental question: what the basic building block in terms of data. Meaning, what data points will I feed the clustering algorithms with? the answer is comprised of two components:
 
- * a.	The geographical resolution – Borough or Post code or Neighborhood?
- * b.	The service resolution – Venue or Venue category?
+ * The geographical resolution – Borough or Post code or Neighborhood?
+ * The service resolution – Venue or Venue category?
   
 *Exploratory data*
 
