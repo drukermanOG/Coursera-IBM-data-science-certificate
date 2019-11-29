@@ -45,3 +45,44 @@ The second choice in density-based algorithms was Mean Shift. I picked it becaus
 After applying K means and two density algorithms, I should explore another direction combining both. On the one hand, we need to run a "soft” clustering algorithm to be able to group data points with weaker correlation and see the big picture. On the other, we need to be able to form clusters with distinct patterns in them – whatever size they are. The chosen algorithm is GMM (Gaussian Mixture Model), providing both flexibility in terms of cluster shape and also being inherently structured. This can be seen as generalizing K means clustering to also address the covariance structure of the data. That way, if there are significantly different patterns in different parts of the data, the clustering process will recognize this and group accordingly. 
 
 One last machine learning technique I decided to use is hierarchical agglomerative clustering. It gives a bit of a different insight. It will show the entire “structure” of the data, building it bottom up and step by step, allowing to monitor the process. I will set the cluster target to 10, as before, and the linkage type to “complete” such that intra-cluster correlation will be maximized again.
+
+**Results**
+
+*K means*
+
+When looking at the clustering results of K means, as expected, it mostly grouped together data points somewhat similar to one another having lots of services but no clear pattern. The only unambiguous consistency that can be observed are clusters with post codes having only 1 or 0 services in them (marked in red below). I call this a "single service" cluster and an example can be found in #8, having only restaurants in it. The summary table containing the average data point in the cluster portrays this well.
+
+When visualizing all the post codes on the map and painting each one according to its K means cluster, I am able to easily spot the dense Toronto areas which are closer to the shoreline. It is even possible to distinguish between two kinds: super-dense and mildly dense. They are included in cluster #3 (light blue) & #9 (orange) respectively.
+
+What K means did for us was basically to find the city center. As you can see in the table above, clusters 3 & 9 are full of all 10 services, with restaurants and coffees being the dominant.
+
+It is also interesting to use an area chart to visualize the trait I mentioned earlier: softness degree, or intra-cluster similarity. The single-color high spikes show clusters with one dominant service in total and a very distinct pattern (not soft). The lower ones, having multiple colors are the best expressions to soft results. The more lines a triangle has inside it the heavier its density and abundance of services, making it softer and with a less distinct pattern.
+
+*DBSCAN*
+
+The results exhibit more powerful patterns in each cluster. The hard clustering can be easily noticed when compared to K means. Unlike with latter, DBSCAN grouped all the dense post codes in a single cluster (#2). The other clusters include, as before, single service post codes and cluster #1 contains outliers.
+
+Interesting to note that K means found post codes containing only a Restaurant\Pub\Coffee while here Restaurant\Park\Coffee are the single service clusters - so they do not completely overlap. Bottom line though, DBSCAN delivered much more “concentrated” (“hard”) clustering all across the board generating limited added value on top of K means. The resulting dichotomy can be also seen in the area chart. Either an “empty” spike (single service) or a filled one (dense).
+
+Visualizing the results on the map demonstrates that the grouping of post codes has little geographical context in it. This is because we have a small number of clusters and most post codes having more than one service are simply grouped together in #2.
+
+*Mean Shift*
+
+Now the following algorithm, Mean Shift, was trusted to generate results resembling DBSCAN since both are powered by density logic. Surprisingly, it did much better than its colleague, uncovering a new type of clusters in the middle of the "softness spectrum" – something not yet seen in neither DBSCAN nor K means results. This can be demonstrated by the blue marks in the following summary table of Mean Shift clusters.
+
+Zoom in to cluster #2 for example, having a combination of few services in each post code I contains. This is what I call a balanced result: not too general and not too rigid. One can learn a whole lot from looking at such clusters as #2 (will be further analyzed in conclusions chapter).
+
+Area chart displays the fact the results are balanced as well. You can see that a lot of triangles are of medium height and contain several colors.
+
+*GMM*
+
+Next, GMM also delivered balanced results (marked in blue) while including the previous patterns of single service clusters (marked in red) and dense ones (marked in green).
+
+When comparing between GMM and Mean Shift, specifically the balanced clusters (blue), one can see that all combinations that GMM generated are new and do not exist in Mean Shift (vice versa is all true). That’s great. For example, cluster #5: post codes there usually include a restaurant, pastries and coffee \ grocery \ park. However, there are two other post codes that lack a restaurant: M6L and M6N. If we know this combination works well in practice somewhere else, isn’t this a potential lead?
+
+Also, while Mean Shift has clustered the post codes with no noticeable geographical context, GMM did. Look at the colors, it seems that there’s a correlation between service supply, area density and location. The purple post codes belong to the densest areas, next are the orange \ turquoise and then the red. This means we are seeing some kind of a “service function" here that depends on the distance from the shoreline: the farther away, the less services the post codes have.
+
+*Hierarchical clustering*
+
+Last but not least is the agglomerative hierarchical clustering. The unique thing about it is the ability to display the entire clustering process visually using the hierarchical tree chart – a dendrogram. Even if to judge only by the structure of the dendrogram, it is already possible to recognize the nature of the clustering. It is similar to GMM and Mean Shift in the way that there are several types of clusters. The service-dense ones are at the top of the tree image while the sparse are in the bottom. There’s a hidden assumption here that a cluster with more post codes contains more services as well. This is not only intuition but also inferred from the previously applied algorithms. I’ve also added the area charts of GMM and hierarchical clustering at the right side of the screen to show this similarity via an additional medium (upper is GMM, lower is hierarchical).
+
